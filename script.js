@@ -51,7 +51,11 @@ const marvel = [
 
 let sessaoQuadrinhos = document.querySelector("#sessao_quadrinhos");
 let campoPesquisa = document.querySelector("#campo_pesquisa");
+let bolaCarrinho = document.querySelector("#bolinha");
 let pesquisaEmAndamento;
+let arrayLocalStorage = [];
+
+
 
 function construirCaixa(nome, img, descricao, preco){
     let elementoDiv = document.createElement("div");
@@ -75,11 +79,31 @@ function construirCaixa(nome, img, descricao, preco){
 
     let elementoP = document.createElement("p");
     elementoP.textContent = `R$ ${preco}`;
+
     let elementoImg2 = document.createElement("img");
     elementoImg2.src = "./imgs/botao-de-adicao.png";
+    elementoImg2.addEventListener("click", ()=>{
+
+        
+        arrayLocalStorage.push({NOME:nome,IMAGEM:img,DESCRICAO:descricao,PRECO:preco});         //Lembrar de quando for reconstruir os itens no carrinho, se não conseguir construir direito com apenas um array, criar um array pra cada elemento;
+
+        localStorage.setItem("quadrinho", JSON.stringify(arrayLocalStorage));
+
+        let teste = JSON.parse(localStorage.quadrinho);
+        console.log(arrayLocalStorage);
+
+        let qntDeItens = arrayLocalStorage.length;
+        bolaCarrinho.style.display = "block";
+        bolaCarrinho.textContent = qntDeItens;
+
+    });
 
     elementoDiv2.appendChild(elementoP);
     elementoDiv2.appendChild(elementoImg2);
+}
+
+function somaCarrinho(){
+    
 }
 
 function pesquisando(){
@@ -103,6 +127,18 @@ function preCarregamento(){
     }
 }
 
-preCarregamento();
+function carregarLocalStorage(){
+    if(localStorage.getItem("quadrinho")){
+        let quadrinhosSelecioandos = JSON.parse(localStorage.quadrinho);
+        arrayLocalStorage = quadrinhosSelecioandos;
 
+        let qntDeItens = arrayLocalStorage.length;
+        console.log(qntDeItens);
+        bolaCarrinho.style.display = "block";
+        bolaCarrinho.textContent = qntDeItens;
+    }
+}
+
+window.addEventListener("load", carregarLocalStorage);
+window.addEventListener("load", preCarregamento);
 campoPesquisa.addEventListener("keyup", pesquisando);
