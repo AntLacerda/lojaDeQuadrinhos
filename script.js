@@ -107,6 +107,8 @@ function construirCaixa(nome, img, descricao, preco){
             barraDeCarregamento.style.width = `${contador}%`;
             contador--;
         }, 100);
+
+        caixaDeSpamTexto.innerHTML = " ";
         let elementoPSpam = document.createElement("p");
         elementoPSpam.textContent = `O quadrinho: ${nome}, foi adicionado aos pedidos!`;
         caixaDeSpamTexto.appendChild(elementoPSpam);
@@ -159,3 +161,4 @@ botaoFecharSpam.addEventListener("click", ()=>{
     clearInterval(movimentacaoBarra);
     caixaDeSpam.style.left = "1650px";
 });
+
