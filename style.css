@@ -146,3 +146,48 @@ body{
     width: 30px;
     cursor: pointer;
 }
+
+.msg_spam{
+    position: fixed;
+    width: 400px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: white;
+    top: 100px;
+    left: 1650px;
+    transition: 500ms;
+}
+
+.msg_span_superior{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.msg_span_superior p{
+    color: rgb(168, 163, 163);
+    top: 20px;
+    left: 400px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.msg_spam img{
+    width: 50px;
+    margin-left: 15px;
+}
+
+.msg_do_spam{
+    font-size: 15px;
+}
+
+.carregamento{
+    width: 100%;
+    height: 10px;
+    background-color: rgb(22, 195, 22);
+    margin-top: 5px;
+    border-bottom-left-radius: 8px;
+    transition: 100ms;
+}
