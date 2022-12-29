@@ -3,49 +3,49 @@ const marvel = [
         Nome: "Guerras Secretas (2015)",
         Imagem: "./imgs/guerras_secretas_009.jpg",
         Descricao: "A incursão final que afetou o Universo marvel o coloca contra o Universo Ultimate.",
-        Preco: "9.99"
+        Preco: "10.00"
     },
     {
         Nome: "A caçada pelo Wolverine",
         Imagem: "./imgs/wolverine.jpg",
         Descricao: "Wolverine morreu envolto em Adamantium, mas quando seu corpo desaparece, os X-Men precisam se unir.",
-        Preco: "19.99"
+        Preco: "20.00"
     },
     {
         Nome: "A Poderosa Thor V2 (2015)",
         Imagem: "./imgs/poderosa_thor.jpg",
         Descricao: "Ela está de volta! A Deusa do Trovão em sua nova fase, com sua identidade ainda encoberta e seu problema de saúde.",
-        Preco: "29.99"
+        Preco: "30.00"
     },
     {
         Nome: "A Fuga dos Homens Mortos",
         Imagem: "./imgs/capitaoamerica.jpg",
         Descricao: "Quando o Capitão América responde a um pedido de socorro originário da selva sul-americana, ele descobre uma equipe de soldados dos EUA.",
-        Preco: "19.99"
+        Preco: "20.00"
     },
     {
-        Nome: "Carnificina <br> (2010)",
+        Nome: `Carnificina (2010)`,
         Imagem: "./imgs/carnage.jpg",
         Descricao: "A história mostra o retorno do Carnificina, dado como morto em um confronto com o Sentinela.",
-        Preco: "39.99"
+        Preco: "40.00"
     },
     {
         Nome: "Demolidor: Renascido (2015)",
         Imagem: "./imgs/demolidor.jpg",
         Descricao: "Os apocalípticos eventos de TERRA DAS SOMBRAS deixaram o outrora admirável legado do Demolidor em pedaços.",
-        Preco: "9.99"
+        Preco: "10.00"
     },
     {
         Nome: "Guardiões da Galáxia - A Última Manopla",
         Imagem: "./imgs/guardioes.jpg",
         Descricao: "O universo está em chamas. Centenas de mundos estão em guerra. Nunca houve tal ódio e divisão.",
-        Preco: "29.99"
+        Preco: "30.00"
     },
     {
         Nome: "Homem-Aranha - A Saga do Clone",
         Imagem: "./imgs/miranha.jpg",
         Descricao: "A Saga do Clone (ou Saga do Clone do Homem-Aranha) é uma das principais sagas do Homem Aranha.",
-        Preco: "59.99"
+        Preco: "60.00"
     }
 ]
 
@@ -62,7 +62,7 @@ let movimentacaoBarra;
 
 
 
-function construirCaixa(nome, img, descricao, preco, pos){
+function construirCaixa(nome, img, descricao, preco){
     let elementoDiv = document.createElement("div");
     elementoDiv.classList.add("box");
     sessaoQuadrinhos.appendChild(elementoDiv);
@@ -137,7 +137,7 @@ function pesquisando(){
 
 function preCarregamento(){
     for(let k=0;k<marvel.length;k++){
-        construirCaixa(marvel[k].Nome,marvel[k].Imagem,marvel[k].Descricao,marvel[k].Preco,k);
+        construirCaixa(marvel[k].Nome,marvel[k].Imagem,marvel[k].Descricao,marvel[k].Preco);
     }
 }
 

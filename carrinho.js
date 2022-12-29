@@ -5,6 +5,11 @@ let cont;
 let qntDeProdutos = document.querySelector(".qnt_itens");
 let valorFinal=0;
 let eleTextoValorFinal = document.createElement("p");
+let arrayAtualizado = [];
+
+function removerItem(arr, prop, valor){
+    return arr.filter(function(i){ return i[prop] !== valor});
+}
 
 function construiCarrinho(img, nome, preco){
     let eleDiv = document.createElement("div");
@@ -74,7 +79,14 @@ function construiCarrinho(img, nome, preco){
     eleLixeira.addEventListener("click", ()=>{
         caixa.removeChild(eleDiv);
         barraDivisoria.remove();
-        localStorage.removeItem("quadrinho");
+        
+        arrayAtualizado = removerItem(arrayLocalStorage, "NOME", `${nome}`);
+        arrayLocalStorage = arrayAtualizado;
+
+        localStorage.setItem("quadrinho", JSON.stringify(arrayAtualizado));
+
+        valorFinal -= Math.round(preco*Number(eleImput.value));
+        eleTextoValorFinal.textContent = `TOTAL: R$ ${Math.round(valorFinal)},00`;
     });
     eleDiv.appendChild(eleLixeira);
 
@@ -119,5 +131,6 @@ function carregarLocalStorage(){
         divFinal.appendChild(eleTextoValorFinal);
     }
 }
+
 
 window.addEventListener("load", carregarLocalStorage);
