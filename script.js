@@ -62,7 +62,7 @@ let movimentacaoBarra;
 
 
 
-function construirCaixa(nome, img, descricao, preco){
+function construirCaixa(nome, img, descricao, preco, pos){
     let elementoDiv = document.createElement("div");
     elementoDiv.classList.add("box");
     sessaoQuadrinhos.appendChild(elementoDiv);
@@ -137,7 +137,7 @@ function pesquisando(){
 
 function preCarregamento(){
     for(let k=0;k<marvel.length;k++){
-        construirCaixa(marvel[k].Nome,marvel[k].Imagem,marvel[k].Descricao,marvel[k].Preco);
+        construirCaixa(marvel[k].Nome,marvel[k].Imagem,marvel[k].Descricao,marvel[k].Preco,k);
     }
 }
 

@@ -34,7 +34,7 @@ body{
 }
 
 .carrinho div p{
-    color: gold;
+    color: rgb(87, 9, 160);
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     margin-top: 6px;
@@ -69,6 +69,7 @@ body{
     background-color: black;
     padding: 25px;
     width: 1300px;
+    margin-bottom: 100px;
 }
 
 .quadrado_maior img{
@@ -84,4 +85,75 @@ body{
     justify-content: space-around;
     align-items: center;
     font-family: 'Nunito', sans-serif;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
+.titulo_quadrado_maior p:first-child{
+    margin-right: 350px;
+}
+
+.div_produtos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+}
+
+.div_produtos img{
+    width: 30px;    
+    cursor: pointer;
+}
+
+.div_produtos img:first-child{
+    width: 170px;
+    margin-bottom: 30px;
+}
+
+.div_produtos input{
+    width: 15px;
+}
+
+.barra_divisoria{
+    width: 1200px;
+    border-color: white;
+    opacity: 0.5;
+    margin-bottom: 40px;
+}
+
+.botao_pagamento{
+    width: 200px;
+    height: 80px;
+    background-color: rgb(87, 9, 160);
+    color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    margin-left: 100px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.alinhamento_rodape{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto_valor_final{
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 80px;
+}
+
+.lixeira_produtos{
+    width: 20px;
 }
